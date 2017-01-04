@@ -36,7 +36,7 @@ type DeviceCommand struct {
 func GetDevices(client *http.Client, endpoint string) ([]DeviceList, error) {
 	ret := []DeviceList{}
 
-	contents, err := issueCommand(client, endpoint, "/devices")
+	contents, err := IssueCommand(client, endpoint, "/devices")
 	if err != nil {
 		return nil, err
 	}
@@ -51,7 +51,7 @@ func GetDevices(client *http.Client, endpoint string) ([]DeviceList, error) {
 func GetDeviceInfo(client *http.Client, endpoint string, id string) (*DeviceInfo, error) {
 	ret := &DeviceInfo{}
 
-	contents, err := issueCommand(client, endpoint, "/devices/"+id)
+	contents, err := IssueCommand(client, endpoint, "/devices/"+id)
 	if err != nil {
 		return nil, err
 	}
@@ -66,7 +66,7 @@ func GetDeviceInfo(client *http.Client, endpoint string, id string) (*DeviceInfo
 func GetDeviceCommands(client *http.Client, endpoint string, id string) ([]DeviceCommand, error) {
 	ret := []DeviceCommand{}
 
-	contents, err := issueCommand(client, endpoint, "/devices/"+id+"/commands")
+	contents, err := IssueCommand(client, endpoint, "/devices/"+id+"/commands")
 	if err != nil {
 		return nil, err
 	}
