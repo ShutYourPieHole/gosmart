@@ -78,7 +78,7 @@ func GetDeviceCommands(client *http.Client, endpoint string, id string) ([]Devic
 }
 
 // issueCommand sends a given command to an URI and returns the contents
-func issueCommand(client *http.Client, endpoint string, cmd string) ([]byte, error) {
+func IssueCommand(client *http.Client, endpoint string, cmd string) ([]byte, error) {
 	uri := endpoint + cmd
 	resp, err := client.Get(uri)
 	if err != nil {
